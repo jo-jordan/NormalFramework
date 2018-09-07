@@ -53,9 +53,11 @@ dependencies {
     // spring-boot框架
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-devtools")
+    compile 'org.springframework.boot:spring-boot-starter-freemarker'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
-    // freemarker框架-页面模版
-    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
+    // freemarker框架-页面模版 要用spring自带的不然找不到.ftl页面
+//    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
 
     // hibernate数据持久层
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.3.6.Final'
@@ -64,7 +66,7 @@ dependencies {
 //    compile 'org.springframework.boot:spring-boot-starter-log4j2'
 
     //配置文件
-    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 //configurations {//删除原有log文件
