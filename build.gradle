@@ -13,6 +13,22 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
+sourceSets {
+    main {
+        java {
+            srcDir("src/java") // 指定源码目录
+        }
+        resources {
+            srcDir("resources")//资源目录
+        }
+    }
+}
+
+bootRun {
+//开启页面热加载功能
+    sourceResources sourceSets.main
+}
+
 bootJar {
     baseName = 'normalframework'
     version =  '1.0.0-SNAPSHOT'
@@ -21,8 +37,8 @@ bootJar {
 group 'com.btten'
 version '1.0.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.8//最低兼容版本 JDK1.8
+targetCompatibility = 1.8//目标兼容版本 JDK1.8
 
 repositories {
     mavenCentral()
@@ -43,4 +59,16 @@ dependencies {
 
     // hibernate数据持久层
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.3.6.Final'
+
+    //日志文件log4j2
+    compile 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    //配置文件
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+}
+
+configurations {//删除原有log文件
+    providedRuntime
+    // remove default logger
+    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 }
