@@ -60,15 +60,15 @@ dependencies {
     // hibernate数据持久层
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.3.6.Final'
 
-    //日志文件log4j2
-    compile 'org.springframework.boot:spring-boot-starter-log4j2'
+//    //日志文件log4j2
+//    compile 'org.springframework.boot:spring-boot-starter-log4j2'
 
     //配置文件
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
-configurations {//删除原有log文件
-    providedRuntime
-    // remove default logger
-    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-}
+//configurations {//删除原有log文件
+//    providedRuntime
+//    // remove default logger
+//    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+//}

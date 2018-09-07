@@ -1,0 +1,41 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /btten
+
+spring:
+  thymeleaf:
+
+    prefix: classpath:/templates/
+    #    encoding: utf-8
+    #    content-type: text/html
+    suffix: .flt
+    cache: false
+  #
+  #  freemarker:
+  #    cache: false
+  #
+  #  groovy:
+  #    template:
+  #      cache: false
+  #
+  #  velocity:
+  #    cache: false
+
+  devtools:
+    livereload:
+      enabled: true #是否支持livereload
+      port: 35729
+    restart:
+      enabled: true #热部署生效
+      #设置重启的目录
+#      additional-paths: src/main/java
+#      exclude: templates/** #classpath目录下的WEB-INF文件夹内容修改不重启
+#
+#  resources:
+#    static-locations: classpath:/templates/
+
+#日志配置
+#logger
+#  logging:
+#    config: classpath:log4j2-spring.xml
