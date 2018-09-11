@@ -51,10 +51,14 @@ dependencies {
     testCompile('com.jayway.jsonpath:json-path')
 
     // spring-boot框架
+    compile group: 'org.springframework', name: 'spring-context', version: '5.0.9.RELEASE'
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-devtools")
     compile 'org.springframework.boot:spring-boot-starter-freemarker'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    //集成shiro权限管理框架
+    compile 'org.apache.shiro:shiro-spring:1.4.0-RC2'
 
     // freemarker框架-页面模版 要用spring自带的不然找不到.ftl页面
 //    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
