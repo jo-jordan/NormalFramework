@@ -38,4 +38,4 @@ spring:
 #日志配置
 #logger
 #  logging:
-#    config: classpath:log4j2-spring.xml
+#    config: classpath:logback-spring.xml
