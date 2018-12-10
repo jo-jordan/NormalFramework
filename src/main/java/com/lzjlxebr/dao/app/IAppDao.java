@@ -1,4 +1,4 @@
-package com.btten.dao.app;
+package com.lzjlxebr.dao.app;
 
 public interface IAppDao {
 }

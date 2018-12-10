@@ -1,4 +1,4 @@
-package com.btten.service.app;
+package com.lzjlxebr.service.app;
 
 public interface IAppService {
 }

@@ -29,12 +29,18 @@ bootRun {
     sourceResources sourceSets.main
 }
 
+jar {
+    manifest{
+        attributes "Main-Class" : "com.lzjlxebr.base.Application"
+    }
+}
+
 bootJar {
     baseName = 'normalframework'
     version =  '1.0.0-SNAPSHOT'
 }
 
-group 'com.btten'
+group 'com.lzjlxebr'
 version '1.0.0-SNAPSHOT'
 
 sourceCompatibility = 1.8//最低兼容版本 JDK1.8
@@ -56,25 +62,19 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile 'org.springframework.boot:spring-boot-starter-freemarker'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    //集成shiro权限管理框架
-    compile 'org.apache.shiro:shiro-spring:1.4.0-RC2'
 
-    // freemarker框架-页面模版 要用spring自带的不然找不到.ftl页面
-//    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.14'
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
 
     // hibernate数据持久层
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.3.6.Final'
 
-//    //日志文件log4j2
-//    compile 'org.springframework.boot:spring-boot-starter-log4j2'
+    compile ("mysql:mysql-connector-java:5.1.24")
 
-    //配置文件
-//    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    // jackson
+    compile 'org.springframework.boot:spring-boot-starter-json'
+    compile 'com.fasterxml.jackson.core:jackson-databind'
+    compile 'com.fasterxml.jackson.core:jackson-core'
 }
-
-//configurations {//删除原有log文件
-//    providedRuntime
-//    // remove default logger
-//    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-//}

@@ -1,4 +1,4 @@
-package com.btten.dao.backend;
+package com.lzjlxebr.dao.backend;
 
 public interface IBackendDao {
 }
