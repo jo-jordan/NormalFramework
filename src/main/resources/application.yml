@@ -1,40 +1,26 @@
-#--------------------------Server--------------------------
 server:
-  tomcat:
-    uri-encoding: UTF-8
   port: 8080
   servlet:
-    context-path: /
-
-#  ssl:
-#    key-store: classpath:xxxxxxxxxx
-#    key-store-type: JKS
-#    key-store-password: 1234
+    context-path: /btten
 
 spring:
-  #--------------------------charset--------------------------
-  http:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
-
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
-
-
   thymeleaf:
+
     prefix: classpath:/templates/
-    encoding: utf-8
+    #    encoding: utf-8
+    #    content-type: text/html
     suffix: .flt
     cache: false
-    enabled: true
-
-  #  redis:
-  #    host: localhost
-  #    port: 6379
+  #
+  #  freemarker:
+  #    cache: false
+  #
+  #  groovy:
+  #    template:
+  #      cache: false
+  #
+  #  velocity:
+  #    cache: false
 
   devtools:
     livereload:
@@ -43,34 +29,13 @@ spring:
     restart:
       enabled: true #热部署生效
       #设置重启的目录
-  #      additional-paths: src/main/java
-  #      exclude: templates/** #classpath目录下的WEB-INF文件夹内容修改不重启
-  #
-  #  resources:
-  #    static-locations: classpath:/templates/
+#      additional-paths: src/main/java
+#      exclude: templates/** #classpath目录下的WEB-INF文件夹内容修改不重启
+#
+#  resources:
+#    static-locations: classpath:/templates/
 
-  #日志配置
-  #logger
-  #  logging:
-  #    config: classpath:logback-spring.xml
-
-  #配置数据库
-  #   local-mac
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false
-    driverClassName: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
-    platform: mysql
-
-
-  jpa:
-    show-sql: true
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
-
-    properties:
-      hibernate:
-#        dialect: org.hibernate.dialect.Oracle10gDialect
-        format_sql: true
+#日志配置
+#logger
+#  logging:
+#    config: classpath:logback-spring.xml
