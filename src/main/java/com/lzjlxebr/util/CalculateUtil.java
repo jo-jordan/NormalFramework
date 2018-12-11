@@ -7,10 +7,16 @@ import java.util.Stack;
 /**
  * create: lzjlxebr
  * time: 2018/12/11 下午8:42
- * description:
+ * description: 解析并计算一个算术表达式，目前可支持小数，括号啥的，但是负数还有问题
  **/
 public class CalculateUtil {
 
+    /**
+     * 将计算语句转化为list集合
+     *
+     * @param middleStatement 运算式
+     * @return
+     */
     public static List<String> parseStatementToList(String middleStatement){
         List<String> stringList = new ArrayList<>();
 
@@ -45,9 +51,12 @@ public class CalculateUtil {
         return stringList;
     }
 
-
-
-
+    /**
+     * 将中缀表达式转化为后缀表达式
+     *
+     * @param buffer 中缀表达式列表
+     * @return
+     */
     public static List<String> parseMiddleToSuffixStatement(List<String> buffer){
 
         /*
@@ -129,7 +138,6 @@ public class CalculateUtil {
 
         return list;
     }
-
 
     /**
      * 计算后缀表达式
