@@ -1,0 +1,10 @@
+# IDEA ignore
+.idea
+.class
+.build
+.out
+.gradle
+.logs
+*.class
+*.log
+!application.properties
