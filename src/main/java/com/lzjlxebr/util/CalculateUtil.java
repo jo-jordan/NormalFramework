@@ -7,7 +7,9 @@ import java.util.Stack;
 /**
  * create: lzjlxebr
  * time: 2018/12/11 下午8:42
- * description: 解析并计算一个算术表达式，目前可支持小数，括号啥的，但是负数还有问题
+ * description: 解析并计算一个算术表达式，目前可支持常规的四则运算
+ * TODO 1 负数无法识别
+ * TODO 2 小数计算存在精确度的问题
  **/
 public class CalculateUtil {
 
@@ -224,6 +226,6 @@ public class CalculateUtil {
     public static void main(String[] args) {
         System.out.println("the final result: "+operatorSuffixResolve(
                 parseMiddleToSuffixStatement(
-                        parseStatementToList("(341.8+456)-443.03*5478/78841/223.89-(43243+899)"))));
+                        parseStatementToList("(341.8+456)-443.03*5478/(78841/223.89-(43243+899))"))));
     }
 }
